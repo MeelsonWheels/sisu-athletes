@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sisu Athletes</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #081421;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.logo {
+  color: #C6FF00;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.button {
+  background: #C6FF00;
+  color: black;
+  padding: 10px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #aaa;
+  max-width: 600px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 470px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flip .inner {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0f1f33;
+  border-radius: 20px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+}
+
+.front img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #0b1726;
+  display: block;
+}
+
+.info {
+  padding: 18px 22px 20px;
+}
+
+.info h3 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+  line-height: 1.1;
+}
+
+.info p {
+  margin: 0 0 10px 0;
+  color: #d7dce3;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.followers {
+  margin-top: 12px;
+  color: #C6FF00 !important;
+  font-weight: bold;
+}
+
+.back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.back h3 {
+  margin-top: 0;
+}
+
+.back p {
+  color: #d7dce3;
+  line-height: 1.5;
+}
+
+.back a {
+  background: #C6FF00;
+  color: black;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SISU</div>
+  <a class="button" href="mailto:info@sisusportsmanagement.com?subject=Request%20Deck&body=Hi,%20I%20would%20like%20to%20request%20the%20SISU%20player%20deck.">Request Deck</a>
+</header>
+
+<div class="hero">
+  <h1>SISU ATHLETES</h1>
+  <p>Discover athletes for brand partnerships, global campaigns, and collaborations.</p>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<script>
+const players = [
+{
+  name:"Sabitra Bhandari",
+  club:"Guingamp · France",
+  nationality:"Nepal",
+  followers:"103K",
+  img:"sabitra-bhandari.jpg",
+  bio:"Nepal’s all-time top scorer and South Asia’s highest-scoring female player. A powerful forward with global impact and strong community connection.",
+  ig:"@sambabhandari"
+},
+{
+  name:"Kate Taylor",
+  club:"Dijon · France",
+  nationality:"New Zealand",
+  followers:"2.9K",
+  img:"Kate-Taylor.jpeg",
+  bio:"Driven and ambitious, always striving to get the best out of herself on and off the pitch.",
+  ig:"@Kate_taylor"
+},
+{
+  name:"Kiara Bercelli",
+  club:"Box Hill · Australia",
+  nationality:"NZ / Italy",
+  followers:"2.6K",
+  img:"Kiara-Bercelli.jpg",
+  bio:"Easygoing and passionate, with a strong love for football, gym, and fashion.",
+  ig:"@kiarabercelli"
+},
+{
+  name:"Olivia Page",
+  club:"Newcastle Jets · Australia",
+  nationality:"NZ / British",
+  followers:"2.0K",
+  img:"Olivia-Page.jpeg",
+  bio:"Energetic and driven, always looking to improve and push her limits.",
+  ig:"@liv_page_"
+},
+{
+  name:"Tiana Fuller",
+  club:"Central Coast Mariners · Australia",
+  nationality:"Australia",
+  followers:"1.6K",
+  img:"Tiana-Fuller.jpeg",
+  bio:"Self-motivated and determined, with a strong focus on improving and succeeding.",
+  ig:"@Tianafuller287"
+},
+{
+  name:"Isabel Hodgson",
+  club:"Adelaide United · Australia",
+  nationality:"Australia",
+  followers:"2.9K",
+  img:"Isabel-Hodgson.jpeg",
+  bio:"A leader on and off the pitch, passionate about football and inspiring others.",
+  ig:"@isabelhodgson"
+},
+{
+  name:"Emma Main",
+  club:"Wellington Phoenix",
+  nationality:"New Zealand",
+  followers:"1.5K",
+  img:"Emma-Main.jpeg",
+  bio:"Calm and easygoing off the pitch, but fully committed when it comes to football.",
+  ig:"@emma.main"
+},
+{
+  name:"Zoe McMeeken",
+  club:"Melbourne Victory",
+  nationality:"New Zealand",
+  followers:"1.8K",
+  img:"Zoe-McMeeken.jpeg",
+  bio:"Hardworking and caring, with a strong focus on development as both a player and person.",
+  ig:"@zoe_meekz"
+},
+{
+  name:"Abel Walatee",
+  club:"Sydney FC",
+  nationality:"Australia / Liberian",
+  followers:"2.8K",
+  img:"Abel-Walatee.jpeg",
+  bio:"Competitive and curious, always looking to grow through football and new experiences.",
+  ig:"@abel_walatee"
+},
+{
+  name:"Ahmed Gulzari",
+  club:"Melbourne Victory",
+  nationality:"Australian / Pakistani",
+  followers:"1.9K",
+  img:"Ahmed-Gulzari.jpeg",
+  bio:"Disciplined and resilient, with a strong professional mindset and work ethic.",
+  ig:"@FarazGulzari"
+}
+];
+
+const grid = document.getElementById("grid");
+
+players.forEach(p => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+    <div class="inner">
+      <div class="front">
+        <img src="${p.img}" alt="${p.name}">
+        <div class="info">
+          <h3>${p.name}</h3>
+          <p>${p.club}</p>
+          <p>${p.nationality}</p>
+          <p class="followers">Instagram · ${p.followers}</p>
+        </div>
+      </div>
+      <div class="back">
+        <div>
+          <h3>${p.name}</h3>
+          <p>${p.bio}</p>
+          <p>${p.ig}</p>
+        </div>
+        <a href="mailto:info@sisusportsmanagement.com?subject=Request%20Profile&body=Hi,%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}%20full%20profile.">
+          Request Full Profile
+        </a>
+      </div>
+    </div>
+  `;
+
+  card.addEventListener("click", () => {
+    card.classList.toggle("flip");
+  });
+
+  grid.appendChild(card);
+});
+</script>
+
+</body>
+</html>
