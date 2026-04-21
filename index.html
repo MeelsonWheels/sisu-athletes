@@ -82,7 +82,6 @@ header {
   border-radius: 20px;
   overflow: hidden;
   backface-visibility: hidden;
-  box-sizing: border-box;
 }
 
 .front img {
@@ -90,7 +89,6 @@ header {
   height: 250px;
   object-fit: contain;
   background: #0b1726;
-  display: block;
 }
 
 .info {
@@ -99,16 +97,16 @@ header {
 
 .info h3 {
   margin: 0 0 12px 0;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .info p {
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   color: #d7dce3;
 }
 
 .followers {
-  margin-top: 12px;
+  margin-top: 10px;
   color: #C6FF00;
   font-weight: bold;
 }
@@ -119,6 +117,11 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.back p {
+  color: #d7dce3;
+  line-height: 1.4;
 }
 
 .back a {
@@ -137,7 +140,9 @@ header {
 
 <header>
   <div class="logo">SISU</div>
-  <a class="button" href="mailto:info@sisusportsmanagement.com?subject=Request%20Deck">Request Deck</a>
+  <a class="button" href="mailto:info@sisusportsmanagement.com?subject=Request%20Deck">
+    Request Deck
+  </a>
 </header>
 
 <div class="hero">
@@ -154,41 +159,43 @@ const players = [
 
 { name:"Kate Taylor", club:"Dijon · France", nationality:"New Zealand", followers:"2.9K", img:"Kate-Taylor.jpeg", bio:"Driven and ambitious, always striving to grow on and off the pitch.", ig:"@Kate._taylor" },
 
+{ name:"Brooke Nunn", club:"Wellington Phoenix", nationality:"English", followers:"47K", img:"Brooke-Nunn.jpeg", bio:"Calm personality with strong individuality.", ig:"@Brooke_nunn" },
+
+{ name:"Rhys Williams", club:"Brisbane Roar · Australia", nationality:"Australian / Welsh", followers:"26.4K", img:"Rhys-Williams.jpeg", bio:"Hardworking and driven with strong discipline.", ig:"@rhyswilliqms" },
+
+{ name:"Junior Makunike", club:"Hardrock FC · Zimbabwe", nationality:"Zimbabwean", followers:"6.7K", img:"Junior-Makunike.jpeg", bio:"Energetic and motivated with a strong mindset.", ig:"@juju_makunike_18" },
+
+{ name:"Isabel Hodgson", club:"Adelaide United · Australia", nationality:"Australian", followers:"2.9K", img:"Isabel-Hodgson.jpeg", bio:"Leader and captain with strong values and work ethic.", ig:"@isabel_hodgson" },
+
 { name:"Kiara Bercelli", club:"Box Hill · Australia", nationality:"New Zealand / Italy", followers:"2.7K", img:"Kiara-Bercelli.jpg", bio:"Easygoing and passionate with a love for football, gym, and fashion.", ig:"@kiarabercelli" },
 
 { name:"Olivia Page", club:"Newcastle Jets · Australia", nationality:"New Zealand / British", followers:"2.1K", img:"Olivia-Page.jpeg", bio:"Energetic and driven, always pushing to improve.", ig:"@Liv_page_" },
 
+{ name:"Ahmed Gulzari", club:"Melbourne Victory", nationality:"Australian / Pakistani", followers:"1.9K", img:"Ahmed-Gulzari.jpeg", bio:"Disciplined and resilient professional.", ig:"@FarazGulzari" },
+
+{ name:"Ischia Brooking", club:"Free Agent", nationality:"Australia", followers:"1.8K", img:"Ischia-Brooking.jpeg", bio:"Down-to-earth and family-oriented.", ig:"@brookingischia" },
+
 { name:"Tiana Fuller", club:"Central Coast Mariners · Australia", nationality:"Australian", followers:"1.7K", img:"Tiana-Fuller.jpeg", bio:"Self-motivated and determined with strong resilience.", ig:"@Tianafuller287" },
 
-{ name:"Isabel Hodgson", club:"Adelaide United · Australia", nationality:"Australian", followers:"2.9K", img:"Isabel-Hodgson.jpeg", bio:"Leader and captain with strong values and work ethic.", ig:"@isabel_hodgson" },
+{ name:"Jordan Lauton", club:"Brisbane Roar · Australia", nationality:"Australian", followers:"1.5K", img:"Jordan-Lauton.jpeg", bio:"Competitive and outdoors-driven footballer who values discipline, resilience, and consistency.", ig:"@Jordan_lauton" },
 
 { name:"Emma Main", club:"Wellington Phoenix", nationality:"New Zealander", followers:"1.5K", img:"Emma-Main.jpeg", bio:"Calm and reliable, fully committed to football.", ig:"@emma.main" },
 
 { name:"Zoe McMeeken", club:"Melbourne Victory", nationality:"New Zealander", followers:"1.5K", img:"Zoe-McMeeken.jpeg", bio:"Hardworking and caring, focused on development.", ig:"@zoe_meekz" },
 
-{ name:"Abel Walatee", club:"Sydney FC", nationality:"Australian / Liberian", followers:"N/A", img:"Abel-Walatee.jpeg", bio:"Competitive and eager to grow.", ig:"@abel_walatee" },
-
-{ name:"Ahmed Gulzari", club:"Melbourne Victory", nationality:"Australian / Pakistani", followers:"1.9K", img:"Ahmed-Gulzari.jpeg", bio:"Disciplined and resilient professional.", ig:"@FarazGulzari" },
-
-{ name:"Junior Makunike", club:"Hardrock FC · Zimbabwe", nationality:"Zimbabwean", followers:"6.7K", img:"Junior-Makunike.jpeg", bio:"Energetic and motivated with a strong mindset.", ig:"@juju_makunike_18" },
-
-{ name:"Vyan Sampson", club:"INAC Kobe · Japan", nationality:"British", followers:"N/A", img:"Vyan-Sampson.jpeg", bio:"Calm and thoughtful, values strong connections.", ig:"@vvsampson" },
-
-{ name:"Rhys Williams", club:"Brisbane Roar · Australia", nationality:"Australian / Welsh", followers:"26.4K", img:"Rhys-Williams.jpeg", bio:"Hardworking and driven with strong discipline.", ig:"@rhyswilliqms" },
-
-{ name:"Ischia Brooking", club:"Free Agent", nationality:"Australia", followers:"1.8K", img:"Ischia-Brooking.jpeg", bio:"Down-to-earth and family-oriented.", ig:"@brookingischia" },
+{ name:"Theodora Mouithys", club:"Football West Academy", nationality:"Australia / NZ", followers:"1.4K", img:"Theodora-Mouithys.jpeg", bio:"Authentic, humble, and confident.", ig:"@theodora.mouithys" },
 
 { name:"Ruby Cuthbert", club:"Brisbane Roar · Australia", nationality:"Australian / English", followers:"1.2K", img:"Ruby-Cuthbert.jpeg", bio:"Adventurous and passionate leader.", ig:"@rubyrosecuthbert" },
 
-{ name:"Theodora Mouithys", club:"Football West Academy", nationality:"Australia / NZ", followers:"1.4K", img:"Theodora-Mouithys.jpeg", bio:"Authentic, humble, and confident.", ig:"@theodora.mouithys" },
-
-{ name:"Jacob Buchanan", club:"Western United", nationality:"Australia / NZ", followers:"105", img:"Jacob-Buchanan.jpeg", bio:"Hardworking and loyal with strong values.", ig:"@Jacobbuchanan98" },
-
-{ name:"Brooke Nunn", club:"Wellington Phoenix", nationality:"English", followers:"47K", img:"Brooke-Nunn.jpeg", bio:"Calm personality with strong individuality.", ig:"@Brooke_nunn" },
+{ name:"Sakura Leong", club:"Football West Academy", nationality:"Australian", followers:"1.2K", img:"Sakura-Leong.jpeg", bio:"Dedicated and gives 100% in everything.", ig:"@sakura_leong" },
 
 { name:"Makala Woods", club:"Wellington Phoenix", nationality:"American", followers:"960", img:"Makala-Woods.jpeg", bio:"Outgoing and thrives on connection.", ig:"@makala.w_" },
 
-{ name:"Sakura Leong", club:"Football West Academy", nationality:"Australian", followers:"1.2K", img:"Sakura-Leong.jpeg", bio:"Dedicated and gives 100% in everything.", ig:"@sakura_leong" }
+{ name:"Jacob Buchanan", club:"Western United", nationality:"Australia / NZ", followers:"105", img:"Jacob-Buchanan.jpeg", bio:"Hardworking and loyal with strong values.", ig:"@Jacobbuchanan98" },
+
+{ name:"Abel Walatee", club:"Sydney FC", nationality:"Australian / Liberian", followers:"N/A", img:"Abel-Walatee.jpeg", bio:"Competitive and eager to grow.", ig:"@abel_walatee" },
+
+{ name:"Vyan Sampson", club:"INAC Kobe · Japan", nationality:"British", followers:"N/A", img:"Vyan-Sampson.jpeg", bio:"Calm and thoughtful, values strong connections.", ig:"@vvsampson" }
 
 ];
 
@@ -209,12 +216,14 @@ players.forEach(p => {
           <p class="followers">Instagram · ${p.followers}</p>
         </div>
       </div>
+
       <div class="back">
         <div>
           <h3>${p.name}</h3>
           <p>${p.bio}</p>
           <p>${p.ig}</p>
         </div>
+
         <a href="mailto:info@sisusportsmanagement.com?subject=Request%20Profile&body=Hi,%20I%20am%20interested%20in%20${encodeURIComponent(p.name)}%20full%20profile.">
           Request Full Profile
         </a>
