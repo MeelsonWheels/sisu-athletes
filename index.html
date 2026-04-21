@@ -6,20 +6,13 @@
 <title>Sisu Athletes</title>
 
 <style>
-body { margin: 0; font-family: Arial; background:#081421; color:white; }
+body { margin:0; font-family:Arial; background:#081421; color:white; }
 
-header {
-  display:flex; justify-content:space-between;
-  padding:20px 40px; align-items:center;
-}
+header { display:flex; justify-content:space-between; padding:20px 40px; align-items:center; }
 
 .logo { color:#C6FF00; font-weight:bold; font-size:20px; }
 
-.button {
-  background:#C6FF00; color:black;
-  padding:10px 18px; border-radius:20px;
-  text-decoration:none; font-weight:bold;
-}
+.button { background:#C6FF00; color:black; padding:10px 18px; border-radius:20px; text-decoration:none; font-weight:bold; }
 
 .hero { text-align:center; margin-top:40px; }
 
@@ -27,37 +20,21 @@ header {
 
 .hero p { color:#aaa; max-width:600px; margin:auto; }
 
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px; padding:40px;
-}
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; padding:40px; }
 
 .card { perspective:1000px; }
 
-.inner {
-  position:relative;
-  width:100%; height:470px;
-  transition:transform .6s;
-  transform-style:preserve-3d;
-}
+.inner { position:relative; width:100%; height:470px; transition:transform .6s; transform-style:preserve-3d; }
 
 .card.flip .inner { transform:rotateY(180deg); }
 
 .front,.back {
-  position:absolute;
-  width:100%; height:100%;
-  background:#0f1f33;
-  border-radius:20px;
-  overflow:hidden;
-  backface-visibility:hidden;
+  position:absolute; width:100%; height:100%;
+  background:#0f1f33; border-radius:20px;
+  overflow:hidden; backface-visibility:hidden;
 }
 
-.front img {
-  width:100%; height:250px;
-  object-fit:contain;
-  background:#0b1726;
-}
+.front img { width:100%; height:250px; object-fit:contain; background:#0b1726; }
 
 .info { padding:18px 22px 20px; }
 
@@ -65,37 +42,15 @@ header {
 
 .info p { margin:0 0 8px; color:#d7dce3; }
 
-.followers {
-  margin-top:10px;
-  color:#C6FF00;
-  font-weight:bold;
-}
+.followers { margin-top:10px; color:#C6FF00; font-weight:bold; }
 
-.back {
-  transform:rotateY(180deg);
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-}
+.back { transform:rotateY(180deg); padding:20px; display:flex; flex-direction:column; justify-content:space-between; }
 
-.back p { color:#d7dce3; line-height:1.4; }
+.back p { color:#d7dce3; }
 
-.ig-link {
-  color:#C6FF00;
-  text-decoration:none;
-  font-weight:bold;
-}
+.ig-link { color:#C6FF00; text-decoration:none; font-weight:bold; }
 
-.cta {
-  background:#C6FF00;
-  color:black;
-  padding:10px;
-  border-radius:12px;
-  text-align:center;
-  text-decoration:none;
-  font-weight:bold;
-}
+.cta { background:#C6FF00; color:black; padding:10px; border-radius:12px; text-align:center; text-decoration:none; font-weight:bold; }
 </style>
 </head>
 
@@ -116,47 +71,47 @@ header {
 <script>
 const players = [
 
-{ name:"Sabitra Bhandari", club:"Wellington Phoenix", nationality:"Nepal", followers:"103K", img:"sabitra-bhandari.jpg", bio:"Nepal’s all-time top scorer and South Asia’s highest-scoring female player.", ig:"@sambabhandari", igUrl:"https://www.instagram.com/sambabhandari" },
+{ name:"Sabitra Bhandari", club:"Wellington Phoenix", nationality:"Nepal", followers:"103K", img:"sabitra-bhandari.jpg", bio:"Nepal’s all-time top scorer.", ig:"@sambabhandari", igUrl:"https://www.instagram.com/sambabhandari" },
 
-{ name:"Kate Taylor", club:"Dijon · France", nationality:"New Zealand", followers:"2.9K", img:"Kate-Taylor.jpeg", bio:"Driven and ambitious, always striving to grow on and off the pitch.", ig:"@Kate._taylor", igUrl:"https://www.instagram.com/kate._taylor" },
+{ name:"Kate Taylor", club:"Dijon · France", nationality:"New Zealand", followers:"2.9K", img:"Kate-Taylor.jpeg", bio:"Driven and ambitious.", ig:"@Kate._taylor", igUrl:"https://www.instagram.com/kate._taylor" },
 
-{ name:"Brooke Nunn", club:"Wellington Phoenix", nationality:"English", followers:"47K", img:"Brooke-Nunn.jpeg", bio:"Calm personality with strong individuality.", ig:"@Brooke_nunn", igUrl:"https://www.instagram.com/brooke_nunn" },
+{ name:"Brooke Nunn", club:"Wellington Phoenix", nationality:"English", followers:"47K", img:"Brooke-Nunn.jpeg", bio:"Calm personality.", ig:"@Brooke_nunn", igUrl:"https://www.instagram.com/brooke_nunn" },
 
-{ name:"Rhys Williams", club:"Brisbane Roar · Australia", nationality:"Australian / Welsh", followers:"26.4K", img:"Rhys-Williams.jpeg", bio:"Hardworking and driven with strong discipline.", ig:"@rhyswilliqms", igUrl:"https://www.instagram.com/rhyswilliqms" },
+{ name:"Rhys Williams", club:"Brisbane Roar", nationality:"Australian / Welsh", followers:"26.4K", img:"Rhys-Williams.jpeg", bio:"Hardworking and driven.", ig:"@rhyswilliqms", igUrl:"https://www.instagram.com/rhyswilliqms" },
 
-{ name:"Junior Makunike", club:"Hardrock FC · Zimbabwe", nationality:"Zimbabwean", followers:"6.7K", img:"Junior-Makunike.jpeg", bio:"Energetic and motivated with a strong mindset.", ig:"@juju_makunike_18", igUrl:"https://www.instagram.com/juju_makunike_18" },
+{ name:"Junior Makunike", club:"Hardrock FC", nationality:"Zimbabwean", followers:"6.7K", img:"Junior-Makunike.jpeg", bio:"Energetic and motivated.", ig:"@juju_makunike_18", igUrl:"https://www.instagram.com/juju_makunike_18" },
 
-{ name:"Vyan Sampson", club:"INAC Kobe · Japan", nationality:"British", followers:"6.2K", img:"Vyan-Sampson.jpeg", bio:"Calm and thoughtful, values strong connections.", ig:"@vvsampson", igUrl:"https://www.instagram.com/vvsampson" },
+{ name:"Vyan Sampson", club:"INAC Kobe", nationality:"British", followers:"6.2K", img:"Vyan-Sampson.jpeg", bio:"Calm and thoughtful.", ig:"@vvsampson", igUrl:"https://www.instagram.com/vvsampson" },
 
-{ name:"Isabel Hodgson", club:"Adelaide United · Australia", nationality:"Australian", followers:"2.9K", img:"Isabel-Hodgson.jpeg", bio:"Leader and captain with strong values.", ig:"@isabel_hodgson", igUrl:"https://www.instagram.com/isabel_hodgson" },
+{ name:"Isabel Hodgson", club:"Adelaide United", nationality:"Australian", followers:"2.9K", img:"Isabel-Hodgson.jpeg", bio:"Leader and captain.", ig:"@isabel_hodgson", igUrl:"https://www.instagram.com/isabel_hodgson" },
 
-{ name:"Kiara Bercelli", club:"Box Hill · Australia", nationality:"New Zealand / Italy", followers:"2.7K", img:"Kiara-Bercelli.jpg", bio:"Easygoing and passionate.", ig:"@kiarabercelli", igUrl:"https://www.instagram.com/kiarabercelli" },
+{ name:"Kiara Bercelli", club:"Box Hill", nationality:"NZ / Italy", followers:"2.7K", img:"Kiara-Bercelli.jpg", bio:"Easygoing and passionate.", ig:"@kiarabercelli", igUrl:"https://www.instagram.com/kiarabercelli" },
 
-{ name:"Olivia Page", club:"Newcastle Jets · Australia", nationality:"New Zealand / British", followers:"2.1K", img:"Olivia-Page.jpeg", bio:"Energetic and driven.", ig:"@Liv_page_", igUrl:"https://www.instagram.com/liv_page_" },
+{ name:"Abel Walatee", club:"Sydney FC", nationality:"Australian / Liberian", followers:"2.8K", img:"Abel-Walatee.jpeg", bio:"Competitive and eager to grow.", ig:"@abel_walatee", igUrl:"https://www.instagram.com/abel_walatee" },
+
+{ name:"Olivia Page", club:"Newcastle Jets", nationality:"NZ / British", followers:"2.1K", img:"Olivia-Page.jpeg", bio:"Energetic and driven.", ig:"@Liv_page_", igUrl:"https://www.instagram.com/liv_page_" },
 
 { name:"Ahmed Gulzari", club:"Melbourne Victory", nationality:"Australian / Pakistani", followers:"1.9K", img:"Ahmed-Gulzari.jpeg", bio:"Disciplined and resilient.", ig:"@FarazGulzari", igUrl:"https://www.instagram.com/farazgulzari" },
 
-{ name:"Ischia Brooking", club:"Free Agent", nationality:"Australia", followers:"1.8K", img:"Ischia-Brooking.jpeg", bio:"Down-to-earth and family-oriented.", ig:"@brookingischia", igUrl:"https://www.instagram.com/brookingischia" },
+{ name:"Ischia Brooking", club:"Free Agent", nationality:"Australia", followers:"1.8K", img:"Ischia-Brooking.jpeg", bio:"Down-to-earth.", ig:"@brookingischia", igUrl:"https://www.instagram.com/brookingischia" },
 
-{ name:"Tiana Fuller", club:"Central Coast Mariners · Australia", nationality:"Australian", followers:"1.7K", img:"Tiana-Fuller.jpeg", bio:"Self-motivated and determined.", ig:"@Tianafuller287", igUrl:"https://www.instagram.com/tianafuller287" },
+{ name:"Tiana Fuller", club:"Central Coast Mariners", nationality:"Australian", followers:"1.7K", img:"Tiana-Fuller.jpeg", bio:"Self-motivated.", ig:"@Tianafuller287", igUrl:"https://www.instagram.com/tianafuller287" },
 
-{ name:"Jordan Lauton", club:"Brisbane Roar · Australia", nationality:"Australian", followers:"1.5K", img:"Jordan-Lauton.jpeg", bio:"Competitive and outdoors-driven.", ig:"@Jordan_lauton", igUrl:"https://www.instagram.com/jordan_lauton" },
+{ name:"Jordan Lauton", club:"Brisbane Roar", nationality:"Australian", followers:"1.5K", img:"Jordan-Lauton.jpeg", bio:"Competitive and outdoors-driven.", ig:"@Jordan_lauton", igUrl:"https://www.instagram.com/jordan_lauton" },
 
 { name:"Emma Main", club:"Wellington Phoenix", nationality:"New Zealander", followers:"1.5K", img:"Emma-Main.jpeg", bio:"Calm and reliable.", ig:"@emma.main", igUrl:"https://www.instagram.com/emma.main" },
 
 { name:"Zoe McMeeken", club:"Melbourne Victory", nationality:"New Zealander", followers:"1.5K", img:"Zoe-McMeeken.jpeg", bio:"Hardworking and caring.", ig:"@zoe_meekz", igUrl:"https://www.instagram.com/zoe_meekz" },
 
-{ name:"Theodora Mouithys", club:"Football West Academy", nationality:"Australia / NZ", followers:"1.4K", img:"Theodora-Mouithys.jpeg", bio:"Authentic and confident.", ig:"@theodora.mouithys", igUrl:"https://www.instagram.com/theodora.mouithys" },
+{ name:"Theodora Mouithys", club:"Football West Academy", nationality:"AU / NZ", followers:"1.4K", img:"Theodora-Mouithys.jpeg", bio:"Authentic and confident.", ig:"@theodora.mouithys", igUrl:"https://www.instagram.com/theodora.mouithys" },
 
-{ name:"Ruby Cuthbert", club:"Brisbane Roar · Australia", nationality:"Australian / English", followers:"1.2K", img:"Ruby-Cuthbert.jpeg", bio:"Adventurous and passionate.", ig:"@rubyrosecuthbert", igUrl:"https://www.instagram.com/rubyrosecuthbert" },
+{ name:"Ruby Cuthbert", club:"Brisbane Roar", nationality:"AU / ENG", followers:"1.2K", img:"Ruby-Cuthbert.jpeg", bio:"Adventurous.", ig:"@rubyrosecuthbert", igUrl:"https://www.instagram.com/rubyrosecuthbert" },
 
-{ name:"Sakura Leong", club:"Football West Academy", nationality:"Australian", followers:"1.2K", img:"Sakura-Leong.jpeg", bio:"Dedicated and disciplined.", ig:"@sakura_leong", igUrl:"https://www.instagram.com/sakura_leong" },
+{ name:"Sakura Leong", club:"Football West Academy", nationality:"Australian", followers:"1.2K", img:"Sakura-Leong.jpeg", bio:"Dedicated.", ig:"@sakura_leong", igUrl:"https://www.instagram.com/sakura_leong" },
 
-{ name:"Makala Woods", club:"Wellington Phoenix", nationality:"American", followers:"960", img:"Makala-Woods.jpeg", bio:"Outgoing and thrives on connection.", ig:"@makala.w_", igUrl:"https://www.instagram.com/makala.w_" },
+{ name:"Makala Woods", club:"Wellington Phoenix", nationality:"American", followers:"960", img:"Makala-Woods.jpeg", bio:"Outgoing.", ig:"@makala.w_", igUrl:"https://www.instagram.com/makala.w_" },
 
-{ name:"Jacob Buchanan", club:"Western United", nationality:"Australia / NZ", followers:"105", img:"Jacob-Buchanan.jpeg", bio:"Hardworking and loyal.", ig:"@Jacobbuchanan98", igUrl:"https://www.instagram.com/jacobbuchanan98" },
-
-{ name:"Abel Walatee", club:"Sydney FC", nationality:"Australian / Liberian", followers:"2.8K", img:"Abel-Walatee.jpeg", bio:"Competitive and eager to grow.", ig:"@abel_walatee", igUrl:"https://www.instagram.com/abel_walatee" }
+{ name:"Jacob Buchanan", club:"Western United", nationality:"AU / NZ", followers:"105", img:"Jacob-Buchanan.jpeg", bio:"Hardworking.", ig:"@Jacobbuchanan98", igUrl:"https://www.instagram.com/jacobbuchanan98" }
 
 ];
 
